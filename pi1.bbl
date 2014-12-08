@@ -1,0 +1,44 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.2 }
+
+\bibitem[ANGELONI 2003]{angeloni}
+\abntrefinfo{ANGELONI}{ANGELONI}{2003}
+{ANGELONI, M.~T. Organizaç\~oes do conhecimento: infra-estrutura, pessoas e
+  tecnologia.
+2003.}
+
+\bibitem[DAVENPORT 2005]{davenport}
+\abntrefinfo{DAVENPORT}{DAVENPORT}{2005}
+{DAVENPORT, T.~H. Pense fora do quadrado.
+2005.
+Rio de Janeiro, Campus.}
+
+\bibitem[NADAI 2006]{nadai}
+\abntrefinfo{NADAI}{NADAI}{2006}
+{NADAI, F.~C. \emph{Uma an\'alise cr\'itica do termo organizaç\~oes intensivas
+  em conhecimento.} 2006.
+Acessado em: 15/11/2014.
+Dispon{\'\i}vel em:
+  \url{revista.feb.unesp.br/index.php/gepros/article/viewFile/124/86}.}
+
+\bibitem[NONAKA Ikujiro e~TAKEUCHI 1997]{nonaka}
+\abntrefinfo{NONAKA Ikujiro e~TAKEUCHI}{NONAKA IKUJIRO E~TAKEUCHI}{1997}
+{NONAKA IKUJIRO E~TAKEUCHI, H. Criaç\~ao do conhecimento na empresa: como as
+  empresas geram a din\^amica da inovaç\~ao.
+1997.
+Rio de Janeiro, Campus.}
+
+\bibitem[OLIVEIRA V. P.; ARAÚJO;~RODRIGUES 2008]{fleury}
+\abntrefinfo{OLIVEIRA V. P.; ARAÚJO;~RODRIGUES}{OLIVEIRA V. P.;
+  ARAÚJO;~RODRIGUES}{2008}
+{OLIVEIRA V. P.; ARAÚJO;~RODRIGUES, M.~V. \emph{Gest\~ao do Conhecimento. IV
+  Congresso de Excel\^encia em Gest\~ao.} 2008.
+Acessado em 27-11-2014.
+Dispon{\'\i}vel em:
+  \url{http://www.excelenciaemgestao.org/Portals/2/documents/cneg4/anais/T7\_0105\_0086.pdf}.}
+
+\end{thebibliography}

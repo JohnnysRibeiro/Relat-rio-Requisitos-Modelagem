@@ -1,0 +1,53 @@
+Com relação aos algoritmos de estabilização e navegação autônoma do VANT, será utilizado o sistema ArduCopter, que é perfeitamente compatível com a plataforma ArduPilot e já incorpora telemetria, programação de percurso autônomo através de waypoints definidos, algoritmos de estabilização PID (Proportional Integral Derivative) com refinamento personalizável, e é compatível com diversas configurações de multirotores atendendo a maioria das opções quando se trata de VANTs de asa rotatória.
+
+O sistema permite a configuração de um ponto de retorno em caso de perda de conexão ou bateria baixa, permite a mudança de waypoints da viagem no meio do voo, permite configuração de decolagem e pouso automático e pode deixar o VANT estacionário a qualquer momento baseando se nos sensores de altitude e GPS.
+
+\textbf{AltIMU-10 v3}
+
+É uma unidade de medição inercial (UMI) que possui em sua composição altímetro, giroscópio (L3GD20D), acelerômetro com magnetômetro (LSM303D) e um barômetro digital (LPS331AP).
+
+Sua interface $ I^{2}C $ acessa as 10 medidas independentes de pressão, rotação, aceleração e do campo magnético que sao usadas para calcular a altitude do sensor e a sua orienteação absoluta, a placa pode oprar com voltagens entre 2,5 e 5,5V e tem espaçamento padrão entre os pinos de 0,1”.
+
+Especificações
+\begin{itemize}
+	\item Dimensões: 25 x 13 x 3mm
+	\item Peso sem as barras de pinos: 0.8g
+	\item Voltagem operacional: 2.5 V to 5.5 V
+	\item Consumo de corrente: 6 mA
+	\item Formato de saída: $ (I^{2}C) $
+	\item Giroscópio: uma leitura de 16 bits por eixo
+	\item Acelerômetro: uma leitura de 16 bits por eixo
+	\item Magnetômetro: uma leitura de 16 bits por eixo
+	\item Barômetro: leitura de pressão de 24 bits (4096 LSb/mbar)
+	\item Faixa de sensibilidade:
+	\item Giroscópio: aproximadamente 245, 500, ou 2000$ ^{\circ} $/s
+	\item Acelerômetro: aproximadamente 2, 4, 6, 8, ou 16G
+	\item Magnetômetro: aproximadamente 2, 4, 8, or 12 gauss
+	\item Barômetro: 260 a 1260 mbar (26 kPa a 126 kPa)
+\end{itemize}
+
+\textbf{ArduPilot Mega}
+
+É completamente programável e requer um módulo GPS e sensores (sensor IMU) para criar um VANT. O autopilot lida tanto com a estabilização quanto coma navegação eliminando a necessidade de um sistema separado de estabilização, também suporta o modo “fly-by-wire” que estabiliza a aeronave enquanto está voando sob radio-controle tornando o voo mais fácil e seguro e possui hardware e software são open source.
+
+Características:
+\begin{itemize}
+	\item Controlador desenvolvido para uso em aviões, carros ou barcos autônomos
+	\item Baseado no processador Atmega1280 de 16MHz
+	\item Hardware embarcado a prova de falhas que utiliza um circuito separado (chip multiplexador ou \item processador ATmega328) para transferir o controle do sistema de rádio controle para o autopilot e de volta também. Inclui a habilidade de dar um boot no processador principal em pleno vôo.
+	\item Design com processador dual com 32 MIPS de potência embarcada
+	\item Suporte a pontos de percurso 3D e comandos de missão (limitados apenas pela memória)
+	\item Vem com um conector GPS de 6 pinos
+	\item Possui 16 entradas analógicas adicionais (com um ADC em cada) e 40 entradas e saídas digitais para sensores adicionais
+	\item Quatro portas seriais dedicadas a telemetria de mão dupla (utilizando módulos XBee opcionais) e expansão
+	\item Pode ser alimentada tanto pela recepção de RF ou por uma bateria separada
+	\item Controle de servo por hardware, o que significa menos solicitações ao processador, respostas rápidas e sem ruídos
+	\item Oito canais de RC (incluindo o canal de liga e desliga do autopilot) que podem ser processados pelo autopilot
+	\item LEDs para alimentação, status do anti-falha, status do autopilot e sincronização do GPS
+	\item Softwae autopilot completo, incluindo IMU e código de planejamento da estação terrestre e da missão, está disponível em  DIY Drones. O código suporta decolagem e aterrissagem autônomas.
+	\item Dimensões: 40mm x 69mm
+\end{itemize}
+
+O ardupilot ja é utilizado em alguns modelos de aviões e outros dispositivos que necessitam de um controle de voo a distância e de uma melhor estabilidade.
+
+Perante uma avaliação feita sobre os dois modelos apresentados foi escolhido o ardupilot como UMI pois com seu uso não se faz necessário o uso de outro módulo para controle de voo, e possui funções aprimoradas para a solução do problema apresentado.

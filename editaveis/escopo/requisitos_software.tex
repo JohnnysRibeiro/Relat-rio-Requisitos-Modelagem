@@ -1,0 +1,54 @@
+O projeto do software responsável pela interface com o usuário (policiais) e processamento dos dados recebidos pela estação de apoio móvel possui, inicialmente, os seguintes requisitos.
+
+% REQUISITOS FUNCIONAIS
+\begin{table}[H]
+\centering
+\begin{tabular}{ | p{3cm} | p{9cm}| }
+\hline
+\textbf{Atribuição} & \textbf{Descrição} \\ \hline
+\textbf{RF01} & O sistema deve fornecer um vídeo em tempo real das imagens capturadas pelo VANT \\ \hline
+\textbf{RF02} & O sistema deve permitir que o usuário capture uma imagem a partir do vídeo fornecido pelo VANT \\ \hline
+\textbf{RF03} & O sistema deve permitir que o usuário altere o zoom do vídeo \\ \hline
+\textbf{RF04} & O sistema deve fornecer informações a respeito da quantidade de bateria do VANT \\ \hline
+\textbf{RF05} & O sistema deve permitir que o usuário envie as informações obtidas para outros agentes \\ \hline
+\textbf{RF06} & O sistema deve receber informações sobre a missão do VANT para serem processados \\ \hline
+\textbf{RF07} & O sistema deve fornecer um mapa com vetores de movimentos para o usuário \\ \hline
+\end{tabular}
+\caption{Requisitos funcionais}
+\end{table}
+
+%REQUISITOS NAO-FUNCIONAIS
+\begin{table}[H]
+\centering
+\begin{tabular}{ | p{3cm} | p{9cm}| }
+\hline
+\textbf{Atribuição} & \textbf{Descrição} \\ \hline
+\textbf{RNF01} & O sistema deve se comunicar com o VANT por radiofrequência \\ \hline
+\textbf{RNF02} & O hardware do sistema deve ser conectado à bateria do veículo \\ \hline
+\textbf{RNF03} & O sistema deve utilizar a plataforma linux \\ \hline
+\end{tabular}
+\caption{Requisitos não-funcionais}
+\end{table}
+
+A partir dos requisitos elicitados, foram prototipadas algumas telas para a interface gráfica com o usuário. O monitor será uma tela de \textit{touchscreen} para melhorar a interação com usuário. Devido a sua maior intuitividade e praticidade.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/primeira_tela}
+\caption{Primeira tela do protótipo de Interface}
+\end{figure}
+
+Essa primeira tela apresenta a interface gráfica como foi concebida pela equipe, no primeiro momento de interação como o software. A tela possui essa divisão entre a informação principal, maior parte da tela, e secundária, canto direito do monitor. As informações secundárias apresentadas são alguns dados relativos ao VANT como a duração da bateria e a altitude, para o maior controle do operador. Logo depois, pode-se ver alguns botões de controle, como captura de tela, zoom, que servem para o melhorar a eficácia do monitoramento do operador.
+
+Logo abaixo, são colocados dois mapas que auxiliarão o operador na tomada de decisões. O primeiro é um mapa de movimentos, que indica os lugares com maior movimentação da multidão. O segundo é um mapa, em que podem ser marcados pontos que o VANT deve se dirigir.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/segunda_tela}
+\caption{Segunda tela do protótipo de Interface}
+\end{figure}
+A segunda tela representa a ação de ir para um ponto selecionado no mapa, apesar da imagem não dar a entender isso, o objetivo dessa tela é representar o deslocamento que o VANT fará e será representado tanto no vídeo quanto no mapa ao lado.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/terceira_tela}
+\caption{Terceira tela do protótipo de Interface}
+\end{figure}
+Esta terceira tela ilusta o momento em que o operador decide capturar uma imagem para analizá-la melhor. Uma importante observação é que o vídeo continua passando, mas passa a assumir o lugar onde o mapa estava, de modo a garantir a visualização do movimento, mesmo na análise de uma imagem. Nesse momento, também, aparece um botão de enviar imagem à central de dados.

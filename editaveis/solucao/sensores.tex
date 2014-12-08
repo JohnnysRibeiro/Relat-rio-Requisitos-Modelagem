@@ -1,0 +1,224 @@
+VANTs são aeronaves não tripuladas constituídas de uma gama de componentes de grande importância, os quais possibilitam seu pleno funcionamento. Grande parte deles são componentes eletrônicos responsáveis por desempenhar diversas funções como, por exemplo, sensores. Por ser um veículo aéreo não tripulado, o mesmo necessita de diversos sensores de alta precisão, que realizem funções que possam substituir a necessidade de um piloto, além de outros que podem ser adicionados para que o VANT realize mais funções no ar além de seu controle.
+
+\subsubsection{Estabilidade}
+
+Para garantir a estabilidade do VANT faz-se necessário o uso de alguns componentes que executem essa função, entre eles é possível citar:
+
+\textbf{Acelerômetro}
+
+É um dispositivo que mede a vibração ou a aceleração do movimento de uma estrutura. A força causada por uma vibração ou alteração do movimento (aceleração) faz com que a massa "esprema" o material piezoelétrico, produzindo uma carga elétrica proporcional à força exercida sobre ele. Como a carga é proporcional à força e a massa é constante, a carga também é proporcional à aceleração. \cite{acelerometro2013}
+
+\textbf{Giroscópio}
+
+É um dispositivo usado para indicar as mudanças de direção de um objeto em movimento. No VANT será útil como instrumento de navegação, pois ajuda a manter o mesmo em seu curso. \cite{giroscopio2013}
+
+\textbf{Barômetro}
+
+É um instrumento cuja função é medir a pressão atmosférica, obtendo a altitude do VANT, é usado para garantir que o mesmo não realize movimentos verticais indesejados.
+
+\textbf{Sonar}
+
+Medir a altitude do VANT, quando próximo ao solo, através de pulsos ultrassônicos.
+
+\textbf{Magnetômetro}
+
+É um instrumento científico que mede os campos magnéticos. Além de determinar a força de um campo magnético, um magnetômetro também pode determinar orientação e direção de campos magnéticos. \cite{magnetometro2012}
+
+Com base nos sensores necessários para controle de estabilidade do VANT, foram encontradas as seguintes possíveis soluções:
+
+\subsubsubsection{Unidade de Medição Inercial}
+
+A UMI, ou Unidade de Medição Inercial, é um componente eletrônico que tem como principal função realizar medições e reportar dados de velocidade, forças gravitacionais, orientação para veículos não tripulados com o uso de giroscópios  (L3GD20D), magnetômetros (LSM303D) e acelerômetros. Uma das UMIs pesquisadas foi a AltIMU-10v3, da fabricante Pololu. Está UMI possui, também, um altímetro, sensor que teria importância absoluta no controle de um VANT. Sua interface I2C acessa as 10 medidas independentes de pressão, rotação, aceleração e do campo magnético que são usadas para calcular a altitude do sensor e a sua orienteação absoluta, a placa pode operar com tensões entre 2,5 e 5,5V e tem espaçamento padrão entre os pinos de 0,1”. \cite{umi2014}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/Unidade_de_medicao_inercial}
+\caption{AltIMU – 10v3 (Disponível em \cite{amazon2014})}
+\end{figure}
+
+Especificações:
+
+\begin{itemize}
+	\item Dimensões: 25 x 13 x 3mm.
+	\item Peso sem as barras de pinos: 0.8g.
+	\item Voltagem operacional: 2.5 V to 5.5 V.
+	\item Consumo de corrente: 6 mA.
+	\item Formato de saída ($I^{2}C$):
+	\begin{itemize}
+		\item Giroscópio: uma leitura de 16 bits por eixo.
+		\item Acelerômetro: uma leitura de 16 bits por eixo.
+		\item Magnetômetro: uma leitura de 16 bits por eixo.
+		\item Barômetro: leitura de pressão de 24 bits (4096 LSb/mbar).
+	\end{itemize}
+	\item Faixa de sensibilidade:
+	\begin{itemize}
+		\item Giroscópio: aproximadamente 245, 500, ou 2000$^\circ$ z/s.
+		\item Acelerômetro: aproximadamente 2, 4, 6, 8, ou 16G.
+		\item Magnetômetro: aproximadamente 2, 4, 8, ou 12 gauss.
+		\item Barômetro: 260 a 1260 mbar (26 kPa a 126 kPa).
+	\end{itemize}
+\end{itemize}
+
+\subsubsubsection{Microcontrolador}
+
+Um microcontrolador é um microprocessador reprogramável que pode ser programado para executar uma determinada função. São geralmente utilizados para controle de circuitos e processamento de dados.
+
+No mercado atual, existem diversos tipos e modelos de microcontroladores que são aplicáveis de projetos simples a projetos mais robustos, que exijam uma capacidade maior de processamento e controle. Devido aos requisitos do projeto do VANT, foram pesquisados micro controladores que possuíssem sensores de estabilidade embutidos, para que a execução do projeto fosse facilitada e barateada. Um dos microcontroladores encontrados foi o PixHawk, da fabricante 3DRobotics.
+
+O microcontrolador PixHawk é um sistema de controle e piloto automático desenvolvido por um projeto de hardware livre da PX4 e manufaturado pela 3DRobotics. O PixHawk possui um processador de 32-bit Cortex M4 core STM32F427 com clock de 168MHz, 256 KB de RAM e 2 MB Flash. Além disso, possui diversos sensores para controle, estabilidade e piloto automático de veículos não tripulados, como por exemplo, um giroscópio de 16-bit e 3 eixos, um acelerômetro e magnetômetro de 14-bit e 3 eixos, além de barômetro. Possui 14 pinos PWM (Pulse-Width Modulation, ou Modulação por Largura de Pulso), além de sistemas de recuperação durante o voo e entradas para sensores GPS e de telemetria.\cite{3drobotics2014}.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/pixhawk}
+\caption{Microcontrolador PixHawk (Disponível em \cite{amazon2014})}
+\end{figure}
+
+Especificações:
+
+\begin{itemize}
+	\item Peso: 38g.
+	\item Dimensões: 81.5mm x 50mm x 15.5mm.
+	\item Tensões de operação: 3.3V ou 6.6V.
+	\item Giroscópio de 16-bit e 3 eixos.
+	\item Acelerômetro e magnetômetro de 14-bit e 3 eixos.
+	\item Barômetro.
+	\item 14 entradas PWM.
+	\item Consumo máximo de corrente: 500mA.
+\end{itemize}
+
+Foi escolhido o microcontrolador PixHawk por suas especificações, simplicidade, facilidade de operação, compatibilidade com algoritmos de navegação, por já possuir conversores A/D (analógico/digital) e por ser um projeto de plataforma aberta. O preço deste micro controlador é de US\$ 250,00.
+
+
+\subsubsection{GPS}
+
+O Sistema de Posicionamento Global, GPS, atualmente se encontra em pleno desenvolvimento tecnológico e proporciona uma excelente solução para o problema de localização no globo terrestre. Devido à grande precisão, muitas áreas estão se beneficiando com a sua utilização, como agricultura, navegação, controle de frotas, além de ser muito usado pelo exército.\cite{alcoforado2000}
+
+O sistema funciona utilizando um conjunto de 24 satélites distribuídos de forma com que o receptor seja capaz de encontrar cerca de 4 deles em qualquer parte do globo a qualquer hora. Cada um deles envia um sinal para o receptor, que processa os dados e converte-os em localização e outras informações.\cite{alcoforado2000}
+
+Os satélites emitem um sinal de rádio constantemente que viaja na velocidade da luz, a cerca de 300000 Km/s. O receptor GPS recebe esse sinal que possui a hora de saída do satélite e a localização, computando o tempo percorrido entre a transmissão e a recepção do sinal. Assim, o receptor sempre sabe onde está o satélite, mantendo sua posição exata sempre atualizada. Com essas informações é possivel triangular a sua posição com uma margem de erro de alguns metros. Para essa tarefa são utilizados três ou quatro satélites.\cite{rosa2000}
+
+Com  a chegada e, consequentemente, com a popularização dos drones, a sua utilização não estará limitada ao uso militar, por exemplo. Existe uma variedade de modelos, cada um com características específicas que oferecem uma gama enorme de aplicações. Essas aeronaves são construídas com diversos componentes de extrema importância. O GPS é um deles. É por meio dele que é possível saber a localização exata do drone e, caso o mesmo perca o sinal com o controlador, ele consegue voltar para um local pré-determinado no próprio GPS.\cite{moraes1994}
+
+O Piksi é um GPS de baixo custo e alta perfomance ideal para integração com drones, veículos autônomos, entre outros. Possui uma cinemática de tempo real (RTK), que proporciona uma precisão relativamente significativa. Possui um software de código aberto, além de esquemas e PCB layout completos e liberados.\cite{swift2013}
+
+O diferencial desse recpetor GPS em comparação ao comum é o sistema RTK (Real Time Kinematic) que dá posições que são 100 vezes mais precisas. Ele consegue tal precisão devido a sua capacidade de reduzir o erro ionosférico com ajuda de um receptor de referência adicional. O atraso ionosférico varia apenas lentamente com o local, de modo que com um receptor de referência próximo o atraso é quase o mesmo para os dois receptores e, em grande parte, podem ser anulados. É por isso que um sistema de GPS RTK utiliza dois receptores.\cite{alcoforado2000}
+
+\begin{itemize}
+	\item Posicionamento nível centímetro (RTK);
+	\item Rápido (50 Hz) de posição / velocidade / atualizações em tempo;
+	\item Software de código aberto e design da placa;
+	\item Baixo consumo de energia: 500mW / 100 mA típico;
+	\item Tamanho pequeno: 53 x 53 milímetros;
+	\item Baixo custo: US\$ 900 para um sistema RTK completo;
+\end{itemize}
+
+% http://gpsworld.com/wp-content/uploads/2013/09/Piksi_rugged.jpg
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/Piksi_rugged}
+\caption{Módulo de GPS Piksi}
+\end{figure}
+
+O diferencial deste receptor GPS em comparação ao comum é o sistema RTK (Real Time Kinematic) que dá posições que são 100 vezes mais precisas. Tal precisão é possível devido a sua capacidade de reduzir o erro ionosférico com ajuda de um receptor de referência adicional. O atraso ionosférico varia lentamente com o local, de modo que com um receptor de referência próximo o atraso é quase o mesmo para os dois receptores e, em grande parte, podem ser anulados. É por isso que um sistema de GPS RTK utiliza dois receptores. \cite{swift2013}
+
+Características:
+\begin{itemize}
+	\item Peso: 32g.
+	\item Posicionamento nível centímetro (RTK) ;
+	\item Alta velocidade de atualização de posição (50Hz);
+	\item Software de código aberto e design da placa;
+	\item Consumo de energia: 500mW / 100 mA típico;
+	\item Tamanho: 53 x 53 milímetros;
+	\item Custo: US\$ 900 para um sistema RTK completo;
+\end{itemize}
+
+\subsubsection{Câmera}
+
+Para o uso de um VANT em operações policiais, é fundamental que se faça o uso de um equipamento tecnológico eficiente. O auxílio de uma câmera acoplada ao VANT para captura de imagens em tempo real já é utilizado para inúmeras funções, tais como: acompanhamento de esportes, monitoramento de shows e até mesmo em certas operações policiais.
+
+Sendo assim, visando o objetivo geral do projeto, o monitoramento de multidões, é necessário que se faça a escolha de uma câmera altamente qualificada para essa finalidade, ou seja, será necessário o uso de uma câmera com zoom óptico, para possível reconhecimento facial, alta qualidade de imagem, leve, e com boa autonomia, entre outros fatores.
+
+Para atender às necessidades do VANT e dos requisitos do projeto, foi proposto um sistema de vídeo para captura, compressão e envio de imagens e vídeos para a estação móvel e para uma central de controle.
+
+O sistema de vídeo foi projetado separadamente do sistema de controle de voo, pois necessita de um processamento mais intenso de informações. Com a necessidade do envio de vídeo da câmera com alta qualidade em tempo real para a central de controle, as soluções encontradas no mercado não satisfazem a demanda requerida, foi necessária a busca por uma solução projetada para o problema detectado. A solução proposta é representada pelo seguinte diagrama:
+
+\begin{figure}
+\centering\includegraphics[scale=0.4]{figuras/diagrama_video}
+\caption{Diagrama do sistema de vídeo}
+\end{figure}
+
+O sensor CMOS captura as imagens em uma resolução de 1080p à 30 frames por segundo, e repassa para o compressor de vídeo que comprime o vídeo usando a compressão H.264, que por sua vez reduz o tamanho em bits do vídeo consideravelmente, sem perdas intoleráveis de qualidade. Após a compressão o vídeo é modulado para envio através de sinais de rádio frequência usando a modulação OFDM no padrão 64-QAM que carrega 6 bits por símbolo no frame OFDM, cada frame possui 192 símbolos de área de dados o que permitem que 1152 bits sejam transmitidos por frame. Contando que um frame é transmitido a cada 6 MHz e a que o canal de 2.4 GHz possui 84 MHz de largura de banda tem-se: 84 MHz / 6 MHz * 1152 bits que totalizam 16128 bits por segundo, o que é suficiente para a transmissão do vídeo comprimido em H.264. A partir desta solução pode-se obter uma taxa suficiente de transmissão, uma imagem de alta qualidade, uma distância de transmissão superior às soluções comuns do mercado, através da utilização de um canal de 2.4 GHz que sofre menos atenuação que o comumente utilizado, de 5.8 GHz, por possuir menor frequência. A modulação OFDM é atualmente usada nas transmissões de TV digital e também nas comunicações através de 4G e essa tecnologia ajuda a diminuir a atenuação (fading), por conta do sinal ser modulado no domínio do tempo ao invés do da frequência. \cite{funcao2012}
+
+O sensor CMOS 1080p tem um preço médio de US\$ 110.
+
+
+\subsubsection{Algoritmo de Navegação}
+
+Responsável por toda a interpretação das informações provindas dos sensores de estabilidade, o algoritmo de navegação é uma parte essencial para o projeto de um VANT. Com ele, é possível a realização do piloto automático por meio de well-points marcados em um mapa e implementação de funções de emergências para casos extremos de autonomia prejudicada.
+
+O algoritmo de navegação escolhido para o VANT é o Arducopter. Compatível com o microcontrolador escolhido, o PixHawk, o Arducopter é um sistema baseado em controladores como o Arduino. Com sua utilização conjunta a sensores de medição inercial, GPS e um microcontrolador, se torna possível a navegação autônoma do VANT por meio de well-points, configuração de um ponto de retorno autônomo em caso de emergência, ou seja, configurar o VANT para retornar à base móvel caso haja qualquer problema. O Arducopter também permite configurações de pouso automático e controle de câmeras. \cite{arducopter2014}
+
+
+\subsection{Transmissor e Receptor para controle manual}
+
+Em casos de emergência, o VANT pode necessitar de um controle manual para se retirar de algum local de perigo, além disso, nos momentos de pouso e decolagem, se vê necessário o uso de um controle manual do VANT. Para que essa tarefa seja cumprida, é preciso o uso de um transmissor no veículo e de um receptor no VANT.
+
+O projeto pretende estudar e organizar a estrutura de um VANT , onde o objetivo é (criar um hexacóptero capaz de auxiliar a policia do DF a atuar em operações de segurança, usando-se as imagens capturadas por este VANT para um carro da polícia, que será modificado e adaptado para tal). Todo o nosso sistema de comunicação será integrado em um banco de dados, onde armazenará todas as informações climáticas e de localização do VANT, no carro da polícia. Alguns dos sistemas de comunicação de dados aéreos utilizados no mundo:
+
+\begin{itemize}
+	\item SATCOM e HF sub-redes: SATCOM fornece cobertura mundial, com exceção da operação com altas latitudes (necessárias para os vôos sobre os pólos). O HF é parcialmente uma nova rede de dados, da qual sua instalação começou em 1995 e foi concluída em 2001. HF dados é responsável pelas novas rotas polares. Aeronave com HF rede de dados podem voar rotas polares e manter a comunicação com os sistemas baseados em terra (ATC centers e centros companhias aéreas). ARINC é o único fornecedor de serviços para HF dados.
+
+	\item VHF sub-rede : Esta rede de estações de rádio VHF de solo possibilita a comunicação com os transceptores terrestres (muitas vezes referidos como estações remota de solo ou RGSs ), permitindo a comunicação com o sistema em solo em tempo real a partir de praticamente qualquer lugar do mundo. Comunicação via VHF é linha de vista. A gama típica é dependente de altitude, com um alcance de transmissão de 200 milhas comum em grandes altitudes. O VHF assim, a comunicação é apenas aplicável durante landmasses que têm uma rede de solo VHF instalado.
+
+	\item ACARS – Aircraft Communications Addressing and Reporting System. O ACARS é o ambiente onde as informações são tratadas, transmitidas e recebidas pela tripulação. Para a comunicação há vários canais que podem ser utilizados em VHF para transmissão e recepção de dados. Mas a grande revolução está no SATCOM, comunicação via satélite, que consiste em uma constelação de satélites geo-estacionários de cobertura global que permitirão uma comunicação de dados e voz perfeita em qualquer lugar.
+
+	\item RF (rádio frequencia) – É um recurso tecnológico das telecomunicações, que através de ondas eletromagnéticas propagadas no espaço, transmite sinais de informações previamente codificadas nestas ondas. O sistema de comunicação de rádio frequência é feito por meio de comprimentos diferente de onda, classificadas em ondas curtas de alta frequência e ondas longas de baixa frequência, desta maneira, utilizadas para fins diversos como televisão, rádio, avião, etc. Seus dois componentes básicos de comunicação são:
+
+	\item Transmissor – formado por um gerador de oscilações, que converte a corrente elétrica em oscilações de uma determinada frequência de rádio; alguns exemplos, são um transdutor que converte a informação a ser transmitida em impulsos elétricos similar a cada valor e um modulador, que controla as variações na intensidade de oscilação ou na freqüência da onda portadora, sendo efetuada em níveis baixo ou alto. Quando a amplitude da onda portadora varia segundo as variações da freqüência e da intensidade de um sinal sonoro, denomina-se modulação AM. Já quando a freqüência da onda portadora varia dentro de um nível estabelecido a um ritmo igual à frequência de um sinal sonoro, denomina-se modulação FM;
+
+	\item Receptor – Tem como componentes principais: a antena para captar as ondas eletromagnéticas e convertê-las em oscilações elétricas; amplificadores que aumentam a intensidade dessas oscilações; equipamentos para desmodulação; um alto-falante para converter os impulsos em ondas sonoras e na maior parte dos receptores osciladores para gerar ondas de radiofrequência que possam se misturar com as ondas recebidas.
+\end{itemize}
+
+Os vários sistemas de controle abordados anteriormente, em geral, são utilizados para aeronaves de grande porte, usadas em companhias aéreas, em grandes empresas militares e multinacionais. Será utilizado então o sistema de rádio frequência. A maioria dos equipamentos e tecnologias em questão, não são viáveis economicamente para o uso do projeto, em virtude da existência de sistema de comunicação de radio frequências amadoras, mais viáveis, e que proporcionam o resultado de forma muito equivalente.
+
+A tecnologia de transmissão por rádio frequência tem vantagens de ser rápida e eficiente no controle de veículos não tripulados e possui uma grande gama de transmissores e receptores de diferentes frequências. Normalmente, a frequência de transmissão utilizada em controle de veículos é a de 2.4GHz ou 5.8GHz, especificadas pela ANATEL. \cite{anatel2014}
+
+No projeto do VANT, será usada a frequência de 2.4GHz para controle, por ser uma frequência muito utilizada e com grande diversidade de transmissores e receptores no mercado. Para esse projeto, foi escolhido o Transmissor/Receptor Futaba T18MZ FASSTest por ser um controlador seguro, possuir possibilidade de seleção entre 18 (dezoito) canais, permitindo a codificação com 18 receptores, assim, sendo possível o controle de 18 VANTs em tempos diferentes. Possui preço de mercado de cerca de US\$ 3200,00.\cite{futaba2014}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/fasstest}
+\caption{Futaba T18MZ FASSTest}
+\end{figure}
+
+\subsubsection{Reguladores de tensão}
+
+Todos os componentes eletrônicos do VANT operarão com tensões de 2.8 V, 3.3V, 5V ou 12V. Para que não ocorram variações abruptas de tensão nos sensores ou nos demais componentes, ou para evitar que outros componentes queimem, se faz necessário o uso de reguladores de tensão. Os reguladores de tensão são componentes que tem como principal função, controlar a tensão de uma fonte de tensão e convertê-la para uma tensão menor, que possa ser utilizada para ligar os demais componentes presentes no circuito. Como no VANT serão utilizados componentes operando na faixa de 2.8 V, 3.3 V, 5 V ou 12 V e a bateria presente no VANT será de tensão de 12V, foram escolhidos os seguintes reguladores de tensão:
+
+LM7805 : Regulador de tensão para 5 V. O regulador de tensão LM7805 é capaz, com uma entrada na faixa de 0 V à 25 V, regular a tensão de saída para 5 V e funciona perfeitamente com entradas de até 1.0A de corrente. \cite{dataLM7805}
+LD1117V33: Regulador de tensão para 3.3 V. É capaz de regular uma tensão de entrada na faixa de 3.3 V à 15 V para uma tensão de 3.3 V na saída e funciona bem com entradas de até 1.3A de corrente. \cite{dataLD111}
+LM7812 : Regulador de tensão para 12 V. Capaz de regular tensão de entrada na faixa de 12 V à 35 V e apresenta funcionamento aceitável com correntes de até 1.5 A.\cite{dataLM7812}
+Diodo Zener 1N5224: Um diodo zener é um componente que pode ser utilizado como um regulador de tensão. Este diodo zener selecionado funciona como um regulador de tensão para 2.8 V. Funciona bem com correntes até 200mA.\cite{data1N5224}
+
+Reguladores de tensão possuem preços baixos, pois são circuitos simples, os preços variam de
+
+\subsection{ESC}
+
+O ESC (Electronic Speed Control) ou controle eletrônico de velocidade é um componente que tem como função, controlar a velocidade e o sentido de rotação de giro dos motores para VANT.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/ESC}
+\caption{ESC}
+\end{figure}
+
+A escolha da ESC ideal para o projeto dependeu da escolha do modelo e especificações dos motores escolhidos para o VANT. Tendo o motor escolhido, foi possível verificar que o mesmo consumia uma corrente de 14A e velocidade por volt de 620 RPM/V. Com esses dados, tornou-se possível a escolha da ESC modelo HobbyKing 20A BlueSeries Brushless, pois, a mesma, consegue oferecer uma corrente de 20A para o motor, que consome 14A, sem carga. O ESC HobbyKing tem um custo de aquisição de cerca de R\$ 25,27 cada.
+
+
+\subsubsection{Diagrama da arquitetura do sistema do VANT}
+
+Após a escolha dos sensores, controladores, reguladores e todos os outros componentes, é proposto o seguinte sistema para o VANT:
+
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.3]{figuras/diagrama_do_sistema}
+\caption{Diagrama da arquitetura do sistema no VANT.}
+\end{figure}
+
+O preço estipulado para gastos com todo módulo de controle e transmissão de imagem é de cerca de US\$ 4000,00 à US\$ 5000,00, que na cotação atual do dólar (R\$ 2,46)\cite{dolar2014} vale cerca de R\$ 9840,00 à R\$ 12300,00.

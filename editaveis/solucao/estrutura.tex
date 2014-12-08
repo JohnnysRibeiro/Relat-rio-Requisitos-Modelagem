@@ -1,0 +1,311 @@
+Por ser um veículo que trabalhará com operações policiais com o objetivo principal de monitoramento de multidões, foi feita uma pesquisa para a escolha qual seria o modelo, entre os existentes no mercado, que melhor se adaptaria a essas condições. Foram colocados em pauta os modelos de asa fixa e asas rotativas. O primeiro modelo citado, como o próprio nome diz é o avião, comum, que possui uma asa fixa responsável pela sua sustentação e sua propulsão pode ser realizada por motores na parte frontal da aeronave.Enquanto no segundo modelo citado,são os que sua propulsão e sustentação são realizados pelos rotores na direção horizontal quando são movimentados pelo(s) seu(s) motor(res).
+
+
+\input{editaveis/solucao/navegacao}
+
+\subsubsection{Material da Estrutura}\index{Material da Estrutura}
+
+A opção do VANT de asa rotativa se mostra mais viável também na sua estrutura.  Pode-se observar que a fuselagem de um multi motor de asa rotativa é relativamente mais simples do que a fuselagem de asa fixa.
+
+A fuselagem é a estrutura principal ou o corpo da aeronave. Ela provê espaço para a carga, controles, acessórios, passageiros e outros equipamentos. Em aeronaves monomotoras é a fuselagem que também abriga o motor.Em aeronaves multi-motoras os motores podem estar embutidos na fuselagem ou podem estar fixados na mesma.
+
+As dificuldades técnicas encontradas em um VANT de asa fixa, no quesito estrutura, seria na complexidade da confecção da fuselagem, pois a mesma deveria ser feita de uma das duas formas abaixo:
+
+Treliça: A fuselagem tipo treliça é geralmente construída de tubos, soldados de tal forma, que todos os membros da treliça possam suportar tanto cargas de tração como de compressão. Construída, por exemplo, de tubos de liga de alumínio.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/fuselagem_trelica}
+\caption{Fuselagem tipo treliça}
+\end{figure}
+
+Monocoque: A fuselagem tipo monocoque, baseia-se  na resistência do revestimento para suportar as tensões atuantes.  Na construção monocoque  é o revestimento que suporta as tensões, sendo assim, o revestimento deve ser forte o bastante para manter a fuselagem rígida. Portanto , o maior problema envolvido na construção monocoque é manter uma resistência suficiente, mantendo o peso dentro de limites aceitáveis.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/fuselagem_monocoque}
+\caption{Fuselagem tipo monocoque}
+\end{figure}
+% http://dc313.4shared.com/doc/oNRi9EqP/preview_html_m2c193980.jpg
+
+Percebe-se que  um VANT de asa fixa torna-se inviável pois se o mesmo for um muiti motor de asa rotativa a fuselagem podera ser feita  de forma mais simples possuindo  apenas algumas vigas de  materiais como fibras de carbono,  ligas leves de alumínio, ligas de titânio, fibra de vidro, entre outros, proporcionando uma considerável economia de meios.\cite{rodrigues}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.4]{figuras/0000642_hexacopter-rct-800-pro-artf}
+\caption{Estrutura de um hexacóptero}
+\end{figure}
+
+O material mais utilizado hoje no mercado aeroespacial, para confecção da estrutura sólida de aeronaves, como a sua fuselagem, é a fibra de carbono. \cite{fibracarbono2014} A mesma é relativamente mais leve do que os demais dimuindo, assim, o arrasto com a atmosfera e aumentando a autonomia da aeronave. Pois na medida que se diminui o arrasto diminui o gasto com a forma de alimentação da mesma.
+
+Possui propriedades mecânicas semelhantes às do aço e é leve como madeira ou plástico. Por sua dureza tem maior resistência ao impacto do que o aço. As fibras carbônicas sozinhas não são apropriadas para uso, porém, ao serem combinadas com materiais outros materiais, estas resultam num material com propriedades mecânicas excelentes, por exemplo, ser combinadas com plástico.
+
+Existem outros diversos materiais como por exemplo a fibra de vidro, que apesar de possuir alta resistencia a tração, flexão e impacto, a mesma possui a desvantagem de ser altamente flexivel, sendo utilizada mas para modelagem de estruturas sólidas o que não será conveniente para a construção da aeronave proposta  aeronave.
+
+Outro material bastante usado na industria aeronautica é o kevlar,que possui alta resistência a impacto, sete vezes mais forte que o aço. Porém nos aviões o kevlar é utilizado para forrar o compartimento do motor, assim, se a turbina vier a explodir, o dano sofrido poderá ser minimizado. Porém o VANT a ser projetado será alimentado por baterias, dimuindo  exponencialmente a possibilidade de uma explosão.
+
+Sendo assim, infere-se que a fibra de carbono é o material mais viável para a construção do corpo do VANT. \cite{fibracarbono2014}
+
+\subsubsection{Cinemática do VANT}
+
+Foram realizados os cálculos para determinar a energia gasta e as forças atuantes no veículo aéreo não tripulado(VANT) durante o plano de vôo do mesmo. Foram analisados dois casos,o primeiro caso baseia-se no momento no qual o VANT inicia o vôo da superfície até o momento em que ele fica estático no ar, e o segundo caso analisado foi o momento que o VANT percorre um deslocamento horizontal para realizar o seu monitoramento do local.
+
+\textbf{Primeiro Caso: Inicio do vôo do VANT até momento que o veículo aéreose estabiliza no ar.}
+
+No primeiro caso analisado para a cinemática do VANT foi realizado os cálculos para descobrir a quantidade de energia gasta quando o VANT se localiza no chão.Utilizou-se a energia potencial gravitacional mostrada na equação 1,como não há altura no momento que o vant se localiza no chão, a energia gasta é 0J.\cite{halliday1976}
+
+\begin{center}
+$\Delta$E=mgh
+
+Equação 1: Energia potencial gravitacional \cite{halliday1976}
+\end{center}
+
+Onde:
+
+m=massa do corpo
+
+g=aceleração da gravidade
+
+h= altura que o corpo ira se movimentar
+
+Depois foi analisado os cálculos para descobrir a quantidade de energia que o VANT utilizou desde o seu momento de propulsão até o momento que ficou estável no ar. Utilizou-se a energia potencial mostrada na equação 1 para calcular esta energia.\cite{halliday1976}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/cinem1}
+\caption{VANT no ar}
+\end{figure}
+
+\begin{center}
+$\Delta$E=mgh
+
+$\Delta$E=3kg  x 40m x 9,8m/s$^{2}$
+
+$\Delta$E=1176 J
+\end{center}
+
+Depois do cálculo de energia que foi consumida no segundo caso através das forças atuantes no veículo aéreo no momento de propulsão, considerou-se um diagrama de forças para encontrar a força de empuxo necessária para o VANT ficar paralisado no ar e no momento de decolagem.\cite{berkley1973}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/cinem2}
+\caption{Forças atuantes no VANT}
+\end{figure}
+
+Através do diagrama de forças atuantes no VANT encontrou-se a força de propulsão, pois a força de propulsão é igual a força peso.
+
+\begin{center}
+P=mg
+
+Equação 2-Força Peso \cite{halliday1976}
+\end{center}
+
+Onde:
+
+M= massa do corpo
+
+G= aceleração da gravidade
+
+\begin{center}
+Fp=P
+\end{center}
+
+Onde:
+
+Fp= Força de propulsão
+
+P=Força Peso
+
+\begin{center}
+Fp=mg
+
+Fp=3kg x 9,8m/s$^{2}$
+
+Fp=29,4 kg m/s$^{2}$
+\end{center}
+
+\textbf{Caso 2; Deslocamento Horizontal do VANT}
+
+No caso 2 foi analisado a energia gasta pelo VANT em seu deslocamento horizontal e as forças atuantes neste movimento.
+
+Para a energia consumida, considerou-se a soma da energia cinética com a energia potencial gravitacional, por apresentar o corpo em movimento e o corpo estável no ar.Com os dados estabelecidos no escopo a velocidade do VANT no plano horizontal é de 2m/s para não prejudicar a qualidade das imagens registradas pela câmera, massa iguala 3kg e altura que o VANT fica suspenso no ar igual a 40m.\cite{berkley1973}\cite{circuitostf2008}
+
+\begin{center}
+Eh=Ep+Eg
+
+Equação 03: Energia total do sistema \cite{berkley1973}
+\end{center}
+
+Onde:
+
+Eh= Energia gasta no deslocamento horizontal
+
+Ep= Energia potencial gravitacional
+
+Ec= Energia cinética
+
+De acordo com a física clássica, a energia cinética é:
+
+\begin{center}
+Ec=(mv$^{2}$) / 2
+
+Equação 4: energia Cinetica \cite{halliday1976}
+\end{center}
+
+Onde:
+
+m=massa do corpo
+
+v= velocidade do corpo
+
+Então:
+
+\begin{center}
+Eh=Ec+mgh
+
+Eh=(1/2) * 3kg *(2m / s)$^{2}$ + 3kg * 9,8m/s$^{2}$ * 40m
+
+Eh=1182 J
+\end{center}
+
+No caso 2 também foi realizado análises e cálculos afim de determinar as forças atuantes no veículo aéreo durante o seu deslocamento horizontal, analisando principalmente as componentes da força de propulsão do hexacóptero, pois para se movimentar horizontalmente o VANT precisa fazer uma inclinação de 15$^{\circ}$.\cite{propulsao2011}
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/cinem3}
+\caption{Análise do deslocamento horizontal}
+\end{figure}
+
+Como o hexacoptero vai se movimentar horizontalmente e pela sua inclinação para se movimentar é necessário decompor as força de propulsão atuante no VANT, a força componente em x, vai determinar a potencia do fluido(ar) e a força horizontal em que o VANT irá atuar.\cite{propulsao2011}
+
+\begin{center}
+Fpy sen $\theta$=mg   \cite{halliday1976}
+
+Fpx=Fpcos $\theta$   \cite{berkley1973}
+
+Fp=mg / sen $\theta$  \cite{circuitostf2008}
+\end{center}
+
+Substituindo a equação 3 na equação 2 obtem-se a força de propulsão componente em x para o deslocamento horizontal.
+
+\begin{center}
+Fpx=(mg / sen $\theta$)cos $\theta$
+
+Fpx=cotg $\theta$*mg
+\end{center}
+
+Substituindo os valores determinados encontram-se todas as forças atuantes no VANT em seu movimento horizontal.
+
+\begin{center}
+Fpy=3kg*9,8m/s$^{2}$=29,4N
+
+Fpx=cotg 15$^{\circ}$*3kg*9,8m/s$^{2}$=109,7N
+
+Fp=3kg*9,8m/s$^{2}$sen 15$^{\circ}$=113,6 N
+\end{center}
+
+\subsubsection{Cálculo Estrutural}
+
+Por meio de todas as informações já citadas anteriormente, cabe agora o cálculo de alguns componentes do veículo aéreo, no que diz respeito ao seu tamanho e se esse irá suportar a carga imposta ao projeto. Portanto, irá se tratar do frame do VANT, dotado das vigas que suportam os motores e hélices nas suas extremidades, seguindo o seguinte esquema:
+
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{figuras/frame_hexa}
+\caption{\textit{Frame} do hexacóptero}
+\end{figure}
+
+Como nosso VANT possui 700mm de motor a motor, determinou-se  que cada viga possui 250mm de comprimento e será tubular de seção vazada. Com essas caracteristicas foram analisados dois modelos para verificar qual melhor se adapta ao projeto.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Modelo} & \textbf{Comprimento} & \textbf{Diâmetro Externo} & \textbf{Diâmetro Interno} & \textbf{Peso} \\ \hline
+1 & 250mm & 22mm & 20mm & 58g \\ \hline
+2 & 250mm & 12mm & 10mm & 26g \\ \hline
+\end{tabular}
+\caption{Especificações dos modelos considerados}
+\end{table}
+
+Um modelo para os cálculos das análises, por ser mais simles e por estar dentro da área de conhecimento dos projetistas, é considerar as barras do frame como vigas, e estas engastadas, sendo o apoio o centro do VANT. Portanto a viga engastada é representada, de modo simplificado:
+
+\begin{figure}[H]
+\centering\includegraphics[scale=1.0]{figuras/viga_engastada}
+\caption{Viga engastada}
+\end{figure}
+
+A força F indicada no esquema acima refere-se à Força resultante entre o peso total do VANT e o empuxo para mante-lo no ar, ou seja, essa força resultante é uma força de propulsão realizada pelos motores para fazer com que ele voe. Como está sendo considerado uma viga para o estudo, das seis totais, então a força que atua na extremidade de uma viga tem módulo de:
+
+\begin{center}
+F = F total de propulsão / 6
+\end{center}
+
+A força total de propulsão, utilizando de cálculos anteriores é para um ângulo:
+
+\begin{center}
+F total de propulsão = cot$\theta$ * mg
+\end{center}
+
+Então foi escolhido $\theta$ = 15$^{\circ}$. A massa m definida no escopo é de m=5kg e g é a aceleração gravitacional que vale aproximadamente g=10 m/s:
+
+\begin{center}
+F total de propulsão = cot15$^{\circ}$ * 5 * 10 = 186,6N
+\end{center}
+
+Portanto:
+
+\begin{center}
+F = 186,6N / 6 = 31,1N
+\end{center}
+
+Voltando ao esquema da Viga, se for feito um corte na barra perpendiculamente ao seu eixo à uma distância x, observa-se para o equilibrio estático dela que há um momento e um cortante, de sentindo contrário à carga ou força aplicada em sua extremidade, seguindo o esquema abaixo:
+
+\begin{figure}[H]
+\centering\includegraphics[scale=1.0]{figuras/esquema_idk}
+\caption{Viga}
+\end{figure}
+
+Portanto:
+
+\begin{center}
+V = F = 31,1N
+
+M = F x L
+
+M = 31,1 x 0,25 = 7,775N.m
+\end{center}
+
+Com esses valores pode-se desenhar o diagrama de esforço cortante e diagrama de momento fletor, que nos mostra detalhadamente, a variação dos esforços ao longo da viga e como o momento age na barra, com relação a sua deformação. Como a força F é a única aplicada ao longo da barra, então o cortante resultante será o mesmo para ela toda. Já o diagrama de momento fletor é dado por uma função linear M= Mo.x, resultando em uma reta crescente.
+
+\begin{figure}[H]
+\centering\includegraphics[scale=1.0]{figuras/esquema_idk2}
+\caption{Diagrama do momento fletor}
+\end{figure}
+
+Dados os diagramas, nota-se que a viga é deformada para cima de acordo com a aplicação da força. Essa deformação será essencial para as conclusões dessa seção, pois ela deve ser a mínima possível, para garantir que a barra não irá romper após entrar em movimento, ou seja, deve-se garantir que o material e as dimensões das barras são tais, que sustentam o peso proposto e suportam as forças atuantes sobre elas sem que ela quebre.  Para a situação considera de uma viga engastada com uma carga em sua extremidade, tem-se o seguinte caso de deformação:
+
+\begin{figure}[H]
+\centering\includegraphics[scale=1.0]{figuras/esquema_idk3}
+\caption{Flexão de uma viga engastada}
+\end{figure}
+
+Com a deformação dada por:
+
+\begin{center}
+$\delta$ = (F x L) / (E x A)
+\end{center}
+
+em que F é a força aplicada na viga, L é comprimento total da viga, E é o módulo de elasticidade do material que é formada a viga. O material escolhido para a fabricação das vigas foi a fibra de carbono que possui módulo de elasticidade aproximado de E= 266 GPa. \cite{reforco2011}
+
+A é a área da seção transversal que é dada por:
+
+\begin{center}
+A = $\pi$(r1$^{2}$ - r2$^{2}$)
+\end{center}
+
+ Em que r1 é o raio externo e r2 é o raio interno da seção. Substituindo todos os valores nas equações dadas:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Modelo 1} & r1= 11 mm e r2= 10 mm & A= 6,6x10$^{-5}$ m2 & $\delta$= 4,43x10$^{-7}$ m \\ \hline
+\textbf{Modelo 2} & r1= 6 mm e r2= 5 mm & A= 3,45x10$^{-5}$ m2 & $\delta$= 8,47x10$^{-7}$ m \\ \hline
+\end{tabular}
+\caption{Cálculos aplicados aos modelos}
+\end{table}
+
+A partir dos valores encontrados, tem-se que as deformações para ambos os modelos são muito pequenas, o que pode considerar que o esforço atuante na viga é compatível com a estrutura dimensionada. Podendo assim garantir que o frame não irá quebrar por conta dos esforços sobre ele. Para a escolha de qual modelo de barra adotar, deve-se associar à maior autonomia do veiculo, sendo mais viável é escolher a estrutura mais leve, assim o ideal é a barra de 25 mm de seção circular vazada com raio externo de 12 mm e raio interno de 10 mm, ou seja, o modelo 1. \cite{resistmat2010}
